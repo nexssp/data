@@ -29,8 +29,8 @@ console.log(is('directory', '../tests')) // true
 
 ## Functions
 
-- **type (value)** -> return one of the datatype: **object, string, array, number, boolean, undefined, function, null, map, set, generatorfunction, promise, stream**
-- **is (type, value)** -> check for the types + **is('directory',v)**, **is('dir',v)**, **is('file',v)**
+- **type (value)** -> return one of the datatype: **object, string, array, number, boolean, undefined, function, null, map, set, generatorfunction, promise, stream, url, json**
+- **is (type, value)** -> check for the types + **is('directory',v)**, **is('dir',v)**, **is('file',v), **is('url',v), , **is('json',v)**
 - **compare (v1, v2)** -> compares 2 values. If any of them is function, it will run first and then compare
 - **isEmpty (value)** -> check if anything is empty like array, object, string.
 
@@ -74,5 +74,6 @@ exports.valid = {
   directory: () => [path.resolve(`lib`)],
   dir: () => [path.resolve(`lib`)],
   url: () => ['https://abc.com', 'http://abc.com'],
+  json: () => ['{"x":1}', '{"val":{"nested":5}}'],
 }
 ```
