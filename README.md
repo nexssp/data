@@ -38,31 +38,31 @@ console.log(is('directory', '../tests')) // true
 
 ```js
 exports.valid = {
-  Object: () => [{}, { x: 1 }, { x: 1, y: { nested: true } }],
-  String: () => ['', 'mystring'],
-  Array: () => [[0], [1, 2]],
-  Number: () => [1, 1234, 36936936936936936936936936936936936936936936936936],
-  Boolean: () => [true, false],
-  Undefined: () => [undefined],
-  Function: () => [() => {}, function () {}, () => 'somestring'],
-  Null: () => [null],
-  Map: () => [
+  object: () => [{}, { x: 1 }, { x: 1, y: { nested: true } }],
+  string: () => ['', 'mystring'],
+  array: () => [[0], [1, 2]],
+  number: () => [1, 1234, 36936936936936936936936936936936936936936936936936],
+  boolean: () => [true, false],
+  undefined: () => [undefined],
+  function: () => [() => {}, function () {}, () => 'somestring'],
+  null: () => [null],
+  map: () => [
     new Map(),
     new Map([
       ['key1', 'value1'],
       ['key2', 'value2'],
     ]),
   ],
-  Set: () => [
+  set: () => [
     new Set(),
     new Set([
       ['key1', 'value1'],
       ['key2', 'value2'],
     ]),
   ],
-  GeneratorFunction: () => [function* x() {}],
-  Promise: () => [Promise.resolve() /*, Promise.reject()*/],
-  Stream: () => [
+  generatorfunction: () => [function* x() {}],
+  promise: () => [Promise.resolve() /*, Promise.reject()*/],
+  stream: () => [
     new stream.Readable(),
     new stream.Writable(),
     new stream.Transform(),
@@ -70,5 +70,9 @@ exports.valid = {
     new stream.Duplex(),
     new stream.PassThrough(),
   ],
+  file: () => [path.resolve(`lib/data.js`)],
+  directory: () => [path.resolve(`lib`)],
+  dir: () => [path.resolve(`lib`)],
+  url: () => ['https://abc.com', 'http://abc.com'],
 }
 ```
