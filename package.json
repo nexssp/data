@@ -1,0 +1,41 @@
+{
+  "name": "@nexssp/data",
+  "main": "lib/data.js",
+  "version": "1.0.1",
+  "description": "Checking and comparing datatypes",
+  "keywords": [
+    "data",
+    "types",
+    "compare"
+  ],
+  "author": "mapoart@gmail.com",
+  "homepage": "https://nexss.com",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nexssp/data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nexssp/data/issues",
+    "email": "mapoart@gmail.com"
+  },
+  "scripts": {
+    "test": "nexssp-test --debug"
+  },
+  "license": "MIT",
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/paypalme/mapoart"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/nexssp/cli?sponsor=1"
+    }
+  ],
+  "dependencies": {
+    "@nexssp/logdebug": "^1.0.16"
+  },
+  "devDependencies": {
+    "@nexssp/test": "^1.1.1"
+  }
+}
