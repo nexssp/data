@@ -6,10 +6,31 @@ Just library for datatypes.
 
 This library/module is the effect of the refactoring the Nexss Programmer **@nexssp/cli** which development has been started in 2018.
 
+## Examples
+
+```js
+const { is, type } = require('@nexssp/data')
+console.log(type(new Map())) // map
+const Stream = require('stream')
+console.log(type(new Stream.Readable())) // stream
+console.log(type({})) // object
+console.log(type(() => {})) // function
+console.log(type(Promise.resolve(1))) // promise
+console.log(is('object', {})) // true
+console.log(is('array', [])) // true
+console.log(is('array', '[]')) // false
+console.log(is('file', 'example.js')) // true
+console.log(is('directory', 'example.js')) // false
+console.log(is('directory', '../tests')) // true
+
+// object, string, array, number, boolean, undefined, function, null,
+// map, set, generatorfunction, promise, stream, file, directory
+```
+
 ## Functions
 
 - **type (value)** -> return one of the datatype: **object, string, array, number, boolean, undefined, function, null, map, set, generatorfunction, promise, stream**
-- **is (type, value)** -> check for the
+- **is (type, value)** -> check for the types + **is('directory',v)**, **is('dir',v)**, **is('file',v)**
 - **compare (v1, v2)** -> compares 2 values. If any of them is function, it will run first and then compare
 - **isEmpty (value)** -> check if anything is empty like array, object, string.
 
