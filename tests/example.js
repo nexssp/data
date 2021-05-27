@@ -1,4 +1,5 @@
-const { is, type } = require('../')
+const { is, type, isEmpty } = require('../')
+process.chdir(__dirname)
 const Stream = require('stream')
 console.log(type(new Map())) // map
 console.log(type(new Stream.Readable())) // stream
@@ -11,6 +12,8 @@ console.log(is('array', '[]')) // false
 console.log(is('file', 'example.js')) // true
 console.log(is('directory', 'example.js')) // false
 console.log(is('directory', '../tests')) // true
-
+console.log(isEmpty([])) // true
+console.log(isEmpty({})) // true
+console.log(isEmpty('')) // true
 // object, string, array, number, boolean, undefined, function, null,
 // map, set, generatorfunction, promise, stream, file, directory

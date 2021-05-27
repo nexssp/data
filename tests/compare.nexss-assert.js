@@ -1,5 +1,5 @@
 const assert = require('assert')
-const { compare } = require('../lib/data')
+const { compare, isEmpty } = require('../lib/data')
 
 // Functions
 assert.ok(
@@ -56,3 +56,12 @@ multiline
 string`
   )
 )
+
+assert.ok(isEmpty({}))
+assert.ok(isEmpty([]))
+
+assert.ok(isEmpty(''))
+assert.ok(isEmpty(null))
+assert.ok(isEmpty(undefined))
+assert.ok(!isEmpty({ x: 1 }))
+assert.ok(!isEmpty([null]))
