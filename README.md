@@ -45,6 +45,7 @@ exports.valid = {
   boolean: () => [true, false],
   undefined: () => [undefined],
   function: () => [() => {}, function () {}, () => 'somestring'],
+  asyncfunction: () => [async () => {}, async function () {}],
   null: () => [null],
   map: () => [
     new Map(),
@@ -73,7 +74,8 @@ exports.valid = {
   file: () => [path.resolve(`lib/data.js`)],
   directory: () => [path.resolve(`lib`)],
   dir: () => [path.resolve(`lib`)],
-  url: () => ['https://abc.com', 'http://abc.com'],
+  url: () => ['https://abc.ce', 'https://abc.de'],
   json: () => ['{"x":1}', '{"val":{"nested":5}}'],
+  regexp: () => [new RegExp(/x/)],
 }
 ```
