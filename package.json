@@ -1,7 +1,7 @@
 {
   "name": "@nexssp/data",
   "main": "lib/data.js",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Checking and comparing datatypes",
   "keywords": [
     "data",
@@ -33,9 +33,22 @@
     }
   ],
   "dependencies": {
-    "@nexssp/logdebug": "^1.0.18"
+    "@nexssp/logdebug": "^1.1.0"
   },
   "devDependencies": {
-    "@nexssp/test": "^1.1.7"
-  }
+    "@nexssp/test": "^1.1.16"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.esm.js",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "files": [
+    "index.esm.js",
+    "index.js",
+    "index.d.ts",
+    "lib/**/*.js"
+  ]
 }
